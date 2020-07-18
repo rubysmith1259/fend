@@ -17,18 +17,10 @@
  * Define Global Variables
  * 
 */
-function createh1() {
-	var h1 document.createElement('h1');
-	h1.textContent = 'heading';
-	h1.setAttribute(id, 'jsh1');
-	document.body.appendChild('h1');
+function myFunction() {
+   var element = document.getElementById('homelink');
+   element.classList.add("active");
 }
-
-function test() {
-	var image1 document.createElement('image');
-	image1.setAttribute(src, 'file:///C:/Users/vchen/Downloads/ccff00%20heart.png');
-	document.body.appendChild('image1');
-]
 /**
  * End Global Variables
  * Start Helper Functions

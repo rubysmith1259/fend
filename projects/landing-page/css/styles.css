@@ -11,11 +11,22 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0, 255, 255) 100%);
+    background-image: url('file:///C:/Users/vchen/Downloads/avril.jpg');
     margin: 0;
     font-family: 'Merriweather', serif;
     color: black;
+}
+
+#musictext, #mooseec{
+	background-color: #ccff00;
+	border: dotted cyan 5px;
+}
+
+.page__header{
+	position: sticky;
+	top: 20px;
+	background-color: #00ffff;
+	text-align: center;	
 }
 
 .active {
@@ -29,6 +40,7 @@ a:hover {
 li {
   float: left;
   display: inline;
+  background-color: #00ffff;
 }
 
 a {
@@ -106,7 +118,7 @@ section {
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background: #00ffff;
     position: fixed;
     top: 0;
     width: 100%;

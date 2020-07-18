@@ -9,28 +9,22 @@
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
   <link href="css/styles.css" rel="stylesheet">
 </head>
-<ul>
-  <li><a id="homelink" href="#home" onclick='myFunction("homelink")'>Home</a></li>
-  <li><a id="cubinglink" href="#cubing"onclick="myFunction('cubinglink')">Cubing</a></li>
-  <li><a href="#music">Music</a></li>
-  <li><a href="#food">Food</a></li>
-  <li><a href="#travel">Travel</a></li>
-</ul>
+
 <body>
-<button id='button'>click</button>
-<script>
-function myFunction(var idname) {
-   var element = document.getElementById(idname);
-   element.classList.add("active");
-}
-</script>
+<script src="app.js"></script>
  
   <!-- HTML Follows BEM naming conventions 
   IDs are only used for sections to connect menu achors to sections -->
   <header class="page__header">
-    <nav class="navbar__menu">
-      <!-- Navigation starts as empty UL that will be populated with JS -->
-      <ul id="navbar__list"></ul>
+	 <nav class="navbar__menu">
+      <ul>
+		<li><a id="homelink" href="#home" onclick="myFunction()">Home</a></li>
+		<li><a id="cubinglink" href="#cubing"onclick="myFunction('cubinglink')">Cubing</a></li>
+		<li><a href="#music">Music</a></li>
+		<li><a href="#food">Food</a></li>
+		<li><a href="#travel">Travel</a></li>
+	</ul>
+   <!-- Navigation starts as empty UL that will be populated with JS -->
     </nav>
   </header>
   <main>
@@ -57,9 +51,9 @@ function myFunction(var idname) {
     </section>
     <section id="music" data-nav="Section 3">
       <div class="landing__container">
-        <h2>Music</h2>
+        <h2 id='mooseec'>Music</h2>
         <img src="file:///C:/Users/vchen/Downloads/avril.jpg" alt="hi" width="450" height="250">
-        <p>music is very relaxing and calming but avril lavigne is the best because she has very nice songs that i love a lot and listening to music is good and relaxing ngl</p>
+        <p id='musictext'>music is very relaxing and calming but avril lavigne is the best because she has very nice songs that i love a lot and listening to music is good and relaxing ngl</p>
       </div>
     </section>   
 	<section id="food" data-nav="Section 4">
@@ -73,7 +67,7 @@ function myFunction(var idname) {
       <div class="landing__container">
         <h2>Travel</h2>
         <img src="file:///C:/Users/vchen/Downloads/travel.jpg" alt="hi" width="250" height="250">
-        <p>i like travelling when my mom doesnt keep forcing me to be in 4903290549039231 pics so she can flex her 5 likes on facebook</p>
+        <p>i like travelling when my mom isnt forcing me to be in 4903290549039231 pics so she can flex her 5 likes on facebook</p>
       </div>
     </section>
   </main>
