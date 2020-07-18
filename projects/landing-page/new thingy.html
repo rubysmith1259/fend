@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <body>
+
+<!--TODO Move javascript function to .js file and link it-->
+
 <button id='enter-button' onclick="buildMenu()">Enter</button>
 <script>
     function buildMenu() {
@@ -18,6 +21,11 @@
             "Travel"
         ];
 
+        var menuItemsJSONArray =
+        {
+            "items": menuItems
+        }
+
         var divElement = document.createElement('div');
         document.body.appendChild(divElement);
         divElement.setAttribute("id", "menu-div");
@@ -26,7 +34,7 @@
         ulMenu.setAttribute("id", "menu-ul");
         divElement.appendChild(ulMenu);
 
-        menuItems.forEach(function (item) {
+        menuItemsJSONArray.items.forEach(function (item) {
             let li = document.createElement('li');
             li.setAttribute("id", item);
             li.innerHTML = item;
@@ -34,7 +42,7 @@
         });
 
         //Create sections
-        menuItems.forEach(function (item) {
+        menuItemsJSONArray.items.forEach(function (item) {
             let section = document.createElement('section');
             section.setAttribute("id", item);
             section.innerHTML = item;
