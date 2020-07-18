@@ -7,24 +7,33 @@
 <body>
 
 <!--TODO Move javascript function to .js file and link it-->
-
 <button id='enter-button' onclick="buildMenu()">Enter</button>
 <script>
     function buildMenu() {
         document.getElementById("enter-button").remove();
 
         //Array to store all menu item strings
-        var menuItems = [
-            "Cubing",
-            "Music",
-            "Food",
-            "Travel"
-        ];
-
-        var menuItemsJSONArray =
-        {
-            "items": menuItems
-        }
+        var menuItemsJSONArray = {
+            "items": [
+                {
+                    "menu": "Cubing",
+                    "description": "i like cubing cuz cubing is good and fun and very good and epic and squan is the best event like obviously",
+                },
+                {
+                    "menu": "Music",
+                    "description": "music is good because music has avril lavigne who has good songs that sound good that makes me feel good, that is why it is very good",
+                },
+                {
+                    "menu": "Food",
+                    "description": "Food is very tasty and good and is so very good"
+                },
+                {
+                    "menu": "Travel",
+                    "description":
+                        "travel is fun when my mom doesn't expect me to pose for a gazillion pics"
+                }
+            ]
+        };
 
         var divElement = document.createElement('div');
         document.body.appendChild(divElement);
@@ -34,18 +43,24 @@
         ulMenu.setAttribute("id", "menu-ul");
         divElement.appendChild(ulMenu);
 
-        menuItemsJSONArray.items.forEach(function (item) {
+        menuItemsJSONArray.items.forEach(function (menuItem) {
             let li = document.createElement('li');
-            li.setAttribute("id", item);
-            li.innerHTML = item;
+            li.setAttribute("id", menuItem.menu);
+            let item = menuItem.menu;
+            li.innerHTML = `<a href="#${item}">${item}</a>`;
             ulMenu.appendChild(li);
         });
 
         //Create sections
-        menuItemsJSONArray.items.forEach(function (item) {
+        menuItemsJSONArray.items.forEach(function (menuItem) {
             let section = document.createElement('section');
+            let item = menuItem.menu;
             section.setAttribute("id", item);
             section.innerHTML = item;
+            let para = document.createElement('p');
+            section.appendChild(para);
+            para.setAttribute('id', `${item}para`);
+            para.textContent = menuItem.description;
             document.body.appendChild(section);
         });
     }
