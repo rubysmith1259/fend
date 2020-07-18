@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<body> 
-<button id='button' onclick="seeEverything();">omg hi</button>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<body>
+<button id='enter-button' onclick="buildMenu()">Enter</button>
 <script>
-	function seeEverything() {
-		
-	}
+    function buildMenu() {
+        document.getElementById("enter-button").remove();
+
+        //Array to store all menu item strings
+        var menuItems = [
+            "Cubing",
+            "Music",
+            "Food",
+            "Travel"
+        ];
+
+        var divElement = document.createElement('div');
+        document.body.appendChild(divElement);
+        divElement.setAttribute("id", "menu-div");
+
+        var ulMenu = document.createElement('ul');
+        ulMenu.setAttribute("id", "menu-ul");
+        divElement.appendChild(ulMenu);
+
+        menuItems.forEach(function (item) {
+            let li = document.createElement('li');
+            li.setAttribute("id", item);
+            li.innerHTML = item;
+            ulMenu.appendChild(li);
+        });
+
+        //Create sections
+        menuItems.forEach(function (item) {
+            let section = document.createElement('section');
+            section.setAttribute("id", item);
+            section.innerHTML = item;
+            document.body.appendChild(section);
+        });
+    }
 </script>
 </body>
 </html>
