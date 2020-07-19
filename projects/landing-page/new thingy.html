@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/styles.css" rel="stylesheet">
 <body>
 
 <!--TODO Move javascript function to .js file and link it-->
@@ -35,31 +36,27 @@
             ]
         };
 
-        var divElement = document.createElement('div');
-        document.body.appendChild(divElement);
-        divElement.setAttribute("id", "menu-div");
-
-        var ulMenu = document.createElement('ul');
-        ulMenu.setAttribute("id", "menu-ul");
-        divElement.appendChild(ulMenu);
+        var navDiv = document.createElement('div');
+        document.body.appendChild(navDiv);
+        navDiv.setAttribute("id", "top-nav");
 
         menuItemsJSONArray.items.forEach(function (menuItem) {
-            let li = document.createElement('li');
-            li.setAttribute("id", menuItem.menu);
             let item = menuItem.menu;
-            li.innerHTML = `<a href="#${item}">${item}</a>`;
-            ulMenu.appendChild(li);
+            let a = document.createElement('a');
+            a.setAttribute("id", item+"-nav");
+            a.innerHTML = `<a href="#${item}-section">${item}</a>`;
+            navDiv.appendChild(a);
         });
 
         //Create sections
         menuItemsJSONArray.items.forEach(function (menuItem) {
             let section = document.createElement('section');
             let item = menuItem.menu;
-            section.setAttribute("id", item);
+            section.setAttribute("id", item+"-section");
             section.innerHTML = item;
             let para = document.createElement('p');
             section.appendChild(para);
-            para.setAttribute('id', `${item}para`);
+            para.setAttribute('id', `${item}-para`);
             para.textContent = menuItem.description;
             document.body.appendChild(section);
         });
